@@ -1,1 +1,58 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Resource Safety Lab</title><link rel="stylesheet" href="style.css"></head><body><header><b>Resource Safety Lab</b><span>ALGORITHM WORKBENCH · ANDREW MORGAN</span></header><main><div class="eyebrow">INTERACTIVE ENGINEERING PROJECT</div><h1>Inspect safe allocation sequences</h1><p>Explore inputs, see the algorithm work, and export reproducible results.</p><div class="layout"><section class="panel"><h2>Scenario</h2><label for="data">JSON: available, allocation, maximum</label><textarea id="data" spellcheck="false"></textarea><div class="actions"><button class="primary" id="run">Analyze scenario</button><button id="reset">Load example</button><button id="export">Export JSON</button></div><p id="error" role="alert"></p><p>All computation runs locally in your browser. Edit the sample to explore a different scenario.</p></section><section class="panel"><div id="metrics" class="metrics"></div><div id="visual"></div><h2>Analysis</h2><div id="result"></div><h2>How it works</h2><div id="steps"></div></section></div><footer>Modernized from original college coursework. Original sources and assignment references remain in the repository.</footer></main><script src="engine.js"></script><script>const PROJECT="Banker-Algorithm-GUI", SAMPLE="{\n  \"available\": [\n    3,\n    3,\n    2\n  ],\n  \"allocation\": [\n    [\n      0,\n      1,\n      0\n    ],\n    [\n      2,\n      0,\n      0\n    ],\n    [\n      3,\n      0,\n      2\n    ],\n    [\n      2,\n      1,\n      1\n    ],\n    [\n      0,\n      0,\n      2\n    ]\n  ],\n  \"maximum\": [\n    [\n      7,\n      5,\n      3\n    ],\n    [\n      3,\n      2,\n      2\n    ],\n    [\n      9,\n      0,\n      2\n    ],\n    [\n      2,\n      2,\n      2\n    ],\n    [\n      4,\n      3,\n      3\n    ]\n  ]\n}";</script><script src="app.js"></script><script src="extras.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Resource Safety Lab</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <b>Resource Safety Lab</b><span>ALGORITHM WORKBENCH · ANDREW MORGAN</span>
+    </header>
+    <main>
+      <div class="eyebrow">INTERACTIVE ENGINEERING PROJECT</div>
+      <h1>Inspect safe allocation sequences</h1>
+      <p>
+        Explore inputs, see the algorithm work, and export reproducible results.
+      </p>
+      <div class="layout">
+        <section class="panel">
+          <h2>Scenario</h2>
+          <label for="data">JSON: available, allocation, maximum</label
+          ><textarea id="data" spellcheck="false"></textarea>
+          <div class="actions">
+            <button class="primary" id="run">Analyze scenario</button
+            ><button id="reset">Load example</button
+            ><button id="export">Export JSON</button>
+          </div>
+          <p id="error" role="alert"></p>
+          <p>
+            All computation runs locally in your browser. Edit the sample to
+            explore a different scenario.
+          </p>
+        </section>
+        <section class="panel">
+          <div id="metrics" class="metrics"></div>
+          <div id="visual"></div>
+          <h2>Analysis</h2>
+          <div id="result"></div>
+          <h2>How it works</h2>
+          <div id="steps"></div>
+        </section>
+      </div>
+      <footer>
+        Modernized from original college coursework. Original sources and
+        assignment references remain in the repository.
+      </footer>
+    </main>
+    <script src="engine.js"></script>
+    <script>
+      const PROJECT = "Banker-Algorithm-GUI",
+        SAMPLE =
+          '{\n  "available": [\n    3,\n    3,\n    2\n  ],\n  "allocation": [\n    [\n      0,\n      1,\n      0\n    ],\n    [\n      2,\n      0,\n      0\n    ],\n    [\n      3,\n      0,\n      2\n    ],\n    [\n      2,\n      1,\n      1\n    ],\n    [\n      0,\n      0,\n      2\n    ]\n  ],\n  "maximum": [\n    [\n      7,\n      5,\n      3\n    ],\n    [\n      3,\n      2,\n      2\n    ],\n    [\n      9,\n      0,\n      2\n    ],\n    [\n      2,\n      2,\n      2\n    ],\n    [\n      4,\n      3,\n      3\n    ]\n  ]\n}';
+    </script>
+    <script src="app.js"></script>
+    <script src="extras.js"></script>
+  </body>
+</html>

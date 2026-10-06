@@ -1,2 +1,24 @@
-'use strict';
-const box=document.createElement('div');box.innerHTML='<h2>Request simulation</h2><label for="request-process">Process index (P0 = 0)</label><input id="request-process" type="number" min="0" value="1"><label for="request-vector">Requested resource vector</label><input id="request-vector" value="1,0,2"><div class="actions"><button id="check-request">Check request</button></div><p id="request-result" aria-live="polite"></p>';document.querySelector('.layout > .panel').append(box);$('check-request').onclick=()=>{try{const r=Engine.request($('data').value,Number($('request-process').value),$('request-vector').value);$('request-result').textContent=r.reason+(r.granted?' Safe sequence: '+r.result.sequence.map(i=>'P'+i).join(' → '):'');}catch(e){$('request-result').textContent=e.message;}};const clear=()=>$('request-result').textContent='';$('data').addEventListener('input',clear);$('reset').addEventListener('click',clear);
+"use strict";
+const box = document.createElement("div");
+box.innerHTML =
+  '<h2>Request simulation</h2><label for="request-process">Process index (P0 = 0)</label><input id="request-process" type="number" min="0" value="1"><label for="request-vector">Requested resource vector</label><input id="request-vector" value="1,0,2"><div class="actions"><button id="check-request">Check request</button></div><p id="request-result" aria-live="polite"></p>';
+document.querySelector(".layout > .panel").append(box);
+$("check-request").onclick = () => {
+  try {
+    const r = Engine.request(
+      $("data").value,
+      Number($("request-process").value),
+      $("request-vector").value,
+    );
+    $("request-result").textContent =
+      r.reason +
+      (r.granted
+        ? " Safe sequence: " + r.result.sequence.map((i) => "P" + i).join(" → ")
+        : "");
+  } catch (e) {
+    $("request-result").textContent = e.message;
+  }
+};
+const clear = () => ($("request-result").textContent = "");
+$("data").addEventListener("input", clear);
+$("reset").addEventListener("click", clear);
