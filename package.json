@@ -1,0 +1,7 @@
+{
+  "name": "banker-algorithm-gui",
+  "private": true,
+  "scripts": {
+    "test": "node tests/algorithms.cjs"
+  }
+}
